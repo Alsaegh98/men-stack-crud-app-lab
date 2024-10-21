@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= planet.name %></title>
+  
+</head>
+<body>
+  <div class="planet-details">
+  <h1><%= planet.name %></h1>
+  <% if(planet.isReadyToSee){ %>
+    <p>This planet is ready to see!</p>
+  <% } else { %>
+    <p>This planet is not ready to see!</p>
+  <% } %>
+  
+  <div class="planet-actions">
+    <form
+      class="delete-form"
+      action="/planets/<%=planet._id%>?_method=DELETE"
+      method="POST"
+    >
+      <button class="delete-button" type="submit">
+        Delete <%= planet.name %>
+      </button>
+    </form>
+    <a class="edit-link" href="/planets/<%= planet._id %>/edit">
+      <div class="edit-text">Edit <%= planet.name %></div>
+    </a>
+  </div>
+  
+  <a class="planets-index-link" href="/planets">
+    <div class="index-link-text">Back to planets</div>
+  </a>
+</body>
+</html>

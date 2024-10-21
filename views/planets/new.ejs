@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a planet</title>
+  </head>
+  <body>
+    <a class="planets-index-link" href="/planets">
+      <div class="index-link-text">Back to planets</div>
+    </a>
+    <h1>Create a New planet!</h1>
+
+    <form action="/planets" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" />
+
+      <div class="checkbox-div">
+        <label for="ready-to-see">Ready to see?</label>
+        <input type="checkbox" name="isReadyToSee" id="ready-to-see" />
+      </div>
+
+      <button type="submit">Add planet</button>
+    </form>
+  </body>
+</html>
